@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       SMILEY GROUPS OF COMPANIES — index.html
+       "One Step Tech Solution"
+       Built for GitHub + Vercel static hosting
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smiley Groups — One Step Tech Solution</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Smiley Groups of Companies — Your one-stop tech solution for mobile sales & service, studio photography, custom PC builds, CCTV security, LED signboards, and sound & DJ works." />
+  <meta name="keywords" content="Smiley Groups, mobile service, PC factory, CCTV, LED boards, DJ sound, Thekkalur, Vanjipalayam, Avinashi, Kaniyampoondi" />
+  <meta name="author" content="Smiley Groups of Companies" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://smileygroups.vercel.app/" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Smiley Groups — One Step Tech Solution" />
+  <meta property="og:description" content="Mobile sales, studio, PC builds, CCTV, LED boards & sound works — all under one roof at Smiley Groups." />
+  <meta property="og:url" content="https://smileygroups.vercel.app/" />
+  <meta property="og:image" content="https://smileygroups.vercel.app/og-image.png" />
+  <meta property="og:site_name" content="Smiley Groups" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Smiley Groups — One Step Tech Solution" />
+  <meta name="twitter:description" content="Mobile, studio, PC, CCTV, LED boards & sound — one stop tech solution." />
+
+  <!-- Favicon Placeholder (inline SVG data URI) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%237c3aed'/><text y='48' x='8' font-size='48' font-family='Arial'>😊</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES — Design Tokens
+    ============================================================ */
+    :root {
+      --bg-primary:   #06060f;
+      --bg-secondary: #0d0d1f;
+      --bg-card:      rgba(255,255,255,0.04);
+      --bg-card-hover:rgba(255,255,255,0.08);
+
+      --purple:       #7c3aed;
+      --purple-light: #a855f7;
+      --blue:         #2563eb;
+      --blue-light:   #60a5fa;
+      --cyan:         #22d3ee;
+
+      --glow-purple:  0 0 24px rgba(124,58,237,0.55);
+      --glow-blue:    0 0 24px rgba(37,99,235,0.55);
+      --glow-cyan:    0 0 18px rgba(34,211,238,0.4);
+
+      --grad-primary: linear-gradient(135deg, var(--purple) 0%, var(--blue) 100%);
+      --grad-neon:    linear-gradient(135deg, #7c3aed 0%, #22d3ee 100%);
+      --grad-text:    linear-gradient(90deg, #a855f7, #60a5fa, #22d3ee);
+
+      --text-primary: #f0f0ff;
+      --text-secondary:#a0a0c0;
+      --text-muted:   #5a5a7a;
+
+      --border:       rgba(124,58,237,0.25);
+      --border-bright:rgba(124,58,237,0.6);
+
+      --radius-sm:    8px;
+      --radius-md:    16px;
+      --radius-lg:    24px;
+      --radius-xl:    32px;
+
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body:    'Inter', sans-serif;
+
+      --nav-h:        68px;
+      --transition:   0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+    ul  { list-style: none; }
+
+    /* Gradient text utility */
+    .grad-text {
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Section spacing */
+    .section {
+      padding: 96px 0;
+    }
+    .section--tight {
+      padding: 72px 0;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+    }
+
+    /* Section header */
+    .section-eyebrow {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 540px;
+    }
+    .section-header {
+      margin-bottom: 56px;
+    }
+    .section-header--center {
+      text-align: center;
+    }
+    .section-header--center .section-desc {
+      margin: 0 auto;
+    }
+
+    /* Glassy card */
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .glass-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-bright);
+      transform: translateY(-4px);
+      box-shadow: var(--glow-purple);
+    }
+
+    /* Primary button */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--grad-primary);
+      border: none;
+      border-radius: 50px;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: var(--glow-purple);
+    }
+    .btn-primary:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+      box-shadow: 0 0 36px rgba(124,58,237,0.7);
+    }
+
+    /* Ghost button */
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 30px;
+      background: transparent;
+      border: 1px solid var(--border-bright);
+      border-radius: 50px;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+    .btn-ghost:hover {
+      background: rgba(124,58,237,0.12);
+      border-color: var(--purple-light);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       NAVBAR
+    ============================================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      transition: background var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(6,6,15,0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+    .nav-inner {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .nav-logo .logo-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+    .nav-logo .logo-name span {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: -2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -3px;
+      width: 0; height: 2px;
+      background: var(--grad-primary);
+      border-radius: 2px;
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta { margin-left: 8px; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 26px; height: 18px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: rgba(6,6,15,0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+      flex-direction: column;
+      gap: 0;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      display: block;
+      padding: 14px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--text-primary); }
+    .mobile-menu .btn-primary { margin-top: 16px; width: 100%; justify-content: center; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: var(--nav-h);
+    }
+
+    /* Animated grid background */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(124,58,237,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124,58,237,0.07) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridDrift 20s linear infinite;
+    }
+    @keyframes gridDrift {
+      0%   { background-position: 0 0; }
+      100% { background-position: 60px 60px; }
+    }
+
+    /* Radial glow blobs */
+    .hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.35;
+      animation: blobFloat 8s ease-in-out infinite;
+    }
+    .hero-blob-1 {
+      width: 600px; height: 600px;
+      background: var(--purple);
+      top: -200px; right: -100px;
+      animation-delay: 0s;
+    }
+    .hero-blob-2 {
+      width: 400px; height: 400px;
+      background: var(--blue);
+      bottom: -100px; left: -80px;
+      animation-delay: -4s;
+    }
+    .hero-blob-3 {
+      width: 300px; height: 300px;
+      background: var(--cyan);
+      top: 40%; left: 40%;
+      opacity: 0.12;
+      animation-delay: -2s;
+    }
+    @keyframes blobFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50%       { transform: translate(20px, -20px) scale(1.04); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1200px, 92%);
+      margin: 0 auto;
+      padding: 80px 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.4);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-badge .dot {
+      width: 7px; height: 7px;
+      background: var(--cyan);
+      border-radius: 50%;
+      animation: pulse 1.6s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    /* Service pills */
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 56px;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+    .pill-icon { font-size: 1rem; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: scrollBounce 2s ease infinite;
+      z-index: 2;
+    }
+    .scroll-hint::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--purple-light), transparent);
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ============================================================
+       COUNTER STRIP
+    ============================================================ */
+    #counters {
+      padding: 56px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    #counters::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--bg-primary) 0%, rgba(124,58,237,0.06) 50%, var(--bg-primary) 100%);
+    }
+    .counters-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+    .counter-item {
+      text-align: center;
+      padding: 24px 16px;
+    }
+    .counter-item + .counter-item {
+      border-left: 1px solid var(--border);
+    }
+    .counter-val {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1;
+      background: var(--grad-neon);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .counter-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    #about {
+      background: var(--bg-secondary);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(37,99,235,0.15) 100%);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-visual .big-emoji {
+      font-size: 8rem;
+      filter: drop-shadow(0 0 32px rgba(124,58,237,0.6));
+      animation: iconFloat 4s ease-in-out infinite;
+    }
+    @keyframes iconFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+    .about-visual-tag {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      padding: 10px 18px;
+      background: rgba(6,6,15,0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-bright);
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .about-text .section-desc {
+      margin-bottom: 24px;
+    }
+    .about-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .about-chip {
+      padding: 8px 18px;
+      background: rgba(124,58,237,0.1);
+      border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--purple-light);
+    }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    #services {
+      position: relative;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--grad-primary);
+      opacity: 0;
+      transition: opacity var(--transition);
+      border-radius: var(--radius-lg);
+    }
+    .service-card:hover::before { opacity: 0.05; }
+
+    .service-icon {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      display: block;
+      transition: transform var(--transition);
+    }
+    .service-card:hover .service-icon { transform: scale(1.1) rotate(-4deg); }
+
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .service-tag {
+      padding: 4px 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .service-card--wide {
+      grid-column: span 1;
+    }
+
+    /* ============================================================
+       BRANCHES
+    ============================================================ */
+    #branches {
+      background: var(--bg-secondary);
+    }
+    .branches-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+    .branch-card {
+      padding: 28px 20px;
+      text-align: center;
+      cursor: default;
+    }
+    .branch-icon {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .branch-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .branch-tag {
+      font-size: 0.76rem;
+      color: var(--cyan);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       WHY CHOOSE US
+    ============================================================ */
+    #why {
+      position: relative;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .why-card {
+      padding: 36px 28px;
+    }
+    .why-icon {
+      width: 52px; height: 52px;
+      background: var(--grad-primary);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      box-shadow: var(--glow-purple);
+    }
+    .why-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .why-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* ============================================================
+       GALLERY / PORTFOLIO
+    ============================================================ */
+    #gallery {
+      background: var(--bg-secondary);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      aspect-ratio: 1;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 2.4rem;
+      color: var(--text-muted);
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+      cursor: default;
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item:hover {
+      background: rgba(124,58,237,0.1);
+      border-color: var(--border-bright);
+      transform: scale(1.03);
+    }
+    .gallery-item span {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 0 8px;
+    }
+    .gallery-item--large {
+      grid-column: span 2;
+      grid-row: span 2;
+      font-size: 4rem;
+    }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    #contact {
+      position: relative;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .contact-info-desc {
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+    }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .contact-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .contact-detail-icon {
+      width: 44px; height: 44px;
+      flex-shrink: 0;
+      background: rgba(124,58,237,0.12);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .contact-detail-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+    .contact-detail-val {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Form */
+    .contact-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      backdrop-filter: blur(12px);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .form-group:last-child { margin-bottom: 0; }
+    .form-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+    }
+    .form-control {
+      padding: 13px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      width: 100%;
+    }
+    .form-control::placeholder { color: var(--text-muted); }
+    .form-control:focus {
+      border-color: var(--purple-light);
+      box-shadow: 0 0 0 3px rgba(124,58,237,0.15);
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 110px;
+    }
+    select.form-control option { background: var(--bg-secondary); }
+    .form-submit {
+      width: 100%;
+      justify-content: center;
+      padding: 16px;
+      font-size: 1rem;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    #footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 64px 0 32px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+    .footer-brand .nav-logo {
+      margin-bottom: 16px;
+    }
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 280px;
+      line-height: 1.7;
+    }
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+    }
+    .footer-links li + li { margin-top: 10px; }
+    .footer-links a {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--purple-light); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-bottom-links a {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      transition: color var(--transition);
+    }
+    .footer-bottom-links a:hover { color: var(--purple-light); }
+
+    /* ============================================================
+       FLOATING BUTTONS (WhatsApp + Call)
+    ============================================================ */
+    .fab-group {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 990;
+    }
+    .fab {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition);
+      border: none;
+      color: #fff;
+      text-decoration: none;
+    }
+    .fab:hover { transform: scale(1.12); }
+    .fab-wa {
+      background: #25D366;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    }
+    .fab-wa:hover { box-shadow: 0 6px 28px rgba(37,211,102,0.7); }
+    .fab-call {
+      background: var(--grad-primary);
+      box-shadow: var(--glow-purple);
+    }
+    .fab-call:hover { box-shadow: 0 0 32px rgba(124,58,237,0.8); }
+
+    /* Tooltip */
+    .fab-tip {
+      position: absolute;
+      right: 68px;
+      background: rgba(6,6,15,0.9);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(6px);
+      transition: opacity var(--transition), transform var(--transition);
+    }
+    .fab:hover .fab-tip,
+    .fab:focus .fab-tip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ============================================================
+       SCROLL-REVEAL ANIMATION
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       RESPONSIVE — Tablet
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .about-grid      { grid-template-columns: 1fr; gap: 40px; }
+      .about-visual    { max-width: 480px; }
+      .services-grid   { grid-template-columns: repeat(2, 1fr); }
+      .branches-grid   { grid-template-columns: repeat(3, 1fr); }
+      .why-grid        { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid    { grid-template-columns: repeat(3, 1fr); }
+      .contact-grid    { grid-template-columns: 1fr; }
+      .footer-top      { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ============================================================
+       RESPONSIVE — Mobile
+    ============================================================ */
+    @media (max-width: 768px) {
+      .section { padding: 72px 0; }
+
+      /* Navbar */
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      /* Hero */
+      .hero-content { padding: 56px 0 80px; }
+      .hero-title   { letter-spacing: -0.01em; }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-ghost { justify-content: center; width: 100%; }
+      .scroll-hint  { display: none; }
+
+      /* Counters */
+      .counters-grid { grid-template-columns: repeat(2, 1fr); }
+      .counter-item + .counter-item { border-left: none; }
+      .counter-item:nth-child(odd)  { border-right: 1px solid var(--border); }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr; }
+
+      /* Branches */
+      .branches-grid { grid-template-columns: repeat(2, 1fr); }
+
+      /* Why */
+      .why-grid { grid-template-columns: 1fr; }
+
+      /* Gallery */
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item--large { grid-column: span 2; }
+
+      /* Contact form */
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 28px 20px; }
+
+      /* Footer */
+      .footer-top   { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .branches-grid { grid-template-columns: repeat(2, 1fr); }
+      .counters-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" aria-label="Smiley Groups Home">
+        <span class="logo-icon">😊</span>
+        <div class="logo-name">
+          <span class="grad-text">Smiley Groups</span>
+          <span>One Step Tech Solution</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#branches">Branches</a></li>
+        <li><a href="#gallery">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="#contact" class="btn-primary nav-cta">Get Service Now →</a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+    <a href="#about"    class="mobile-link">About</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#branches" class="mobile-link">Branches</a>
+    <a href="#why"      class="mobile-link">Why Us</a>
+    <a href="#gallery"  class="mobile-link">Portfolio</a>
+    <a href="#contact"  class="mobile-link">Contact</a>
+    <a href="#contact"  class="btn-primary">Get Service Now →</a>
+  </div>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-3" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge" role="status">
+        <span class="dot"></span>
+        5 Branches · Serving Tamil Nadu
+      </div>
+
+      <h1 class="hero-title">
+        <span class="grad-text">One Step</span><br />
+        Tech Solution<br />
+        <span style="color:var(--text-secondary); font-size:0.7em;">for Everything You Need</span>
+      </h1>
+
+      <p class="hero-sub">
+        From mobile repairs and custom PCs to LED signboards, CCTV security, studio photography, and DJ sound — Smiley Groups is your complete technology partner across Tamil Nadu.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          ⚡ Get Service Now
+        </a>
+        <a href="#services" class="btn-ghost">
+          🔍 Explore Services
+        </a>
+      </div>
+
+      <!-- Service pills -->
+      <div class="hero-pills" aria-label="Our services">
+        <span class="pill"><span class="pill-icon">📱</span> Mobiles</span>
+        <span class="pill"><span class="pill-icon">🖥️</span> PC Factory</span>
+        <span class="pill"><span class="pill-icon">📸</span> Studio</span>
+        <span class="pill"><span class="pill-icon">📷</span> CCTV</span>
+        <span class="pill"><span class="pill-icon">💡</span> LED Boards</span>
+        <span class="pill"><span class="pill-icon">🎵</span> Sound &amp; DJ</span>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- ============================================================
+       COUNTER STRIP
+  ============================================================ -->
+  <section id="counters" aria-label="Company statistics">
+    <div class="container">
+      <div class="counters-grid">
+        <div class="counter-item reveal">
+          <span class="counter-val" data-target="5" data-suffix="+">0+</span>
+          <span class="counter-label">Branches</span>
+        </div>
+        <div class="counter-item reveal">
+          <span class="counter-val" data-target="10" data-suffix="+">0+</span>
+          <span class="counter-label">Team Members</span>
+        </div>
+        <div class="counter-item reveal">
+          <span class="counter-val" data-target="1000" data-suffix="+">0+</span>
+          <span class="counter-label">Happy Customers</span>
+        </div>
+        <div class="counter-item reveal">
+          <span class="counter-val" data-target="6" data-suffix="+">0+</span>
+          <span class="counter-label">Services</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section id="about" class="section" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Visual -->
+        <div class="about-visual reveal">
+          <span class="big-emoji" role="img" aria-label="Smiley Groups logo">😊</span>
+          <div class="about-visual-tag">🏆 Trusted Since Day One</div>
+        </div>
+
+        <!-- Text -->
+        <div class="about-text reveal">
+          <span class="section-eyebrow">Our Story</span>
+          <h2 class="section-title" id="about-heading">
+            Tamil Nadu's Most<br /><span class="grad-text">Trusted Tech Group</span>
+          </h2>
+          <p class="section-desc">
+            Smiley Groups of Companies was built on a simple idea: every customer deserves reliable, friendly technology services under one roof. From our first branch, we've grown into a multi-service powerhouse operating across 5 locations in Tamil Nadu.
+          </p>
+          <p class="section-desc" style="margin-top:14px;">
+            We combine technical expertise with genuine care — every repair, installation, and build is handled with the same pride we'd apply to our own devices. That's the Smiley promise.
+          </p>
+
+          <div class="about-chips">
+            <span class="about-chip">📍 5 Locations</span>
+            <span class="about-chip">🔧 6 Services</span>
+            <span class="about-chip">😊 1000+ Customers</span>
+            <span class="about-chip">⚡ Fast Turnaround</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES SECTION
+  ============================================================ -->
+  <section id="services" class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">What We Do</span>
+        <h2 class="section-title" id="services-heading">
+          Six Powerful <span class="grad-text">Service Verticals</span>
+        </h2>
+        <p class="section-desc">
+          One company. Six specialisations. Every tech need you have — covered.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- 1 Smiley Mobiles -->
+        <article class="glass-card service-card reveal" aria-label="Smiley Mobiles">
+          <span class="service-icon" role="img" aria-label="Mobile">📱</span>
+          <h3 class="service-name">Smiley Mobiles</h3>
+          <p class="service-desc">Your neighbourhood mobile hub — from the latest handsets to expert repairs and quick recharges.</p>
+          <div class="service-tags">
+            <span class="service-tag">Mobile Sales</span>
+            <span class="service-tag">Service &amp; Repair</span>
+            <span class="service-tag">Accessories</span>
+            <span class="service-tag">Recharge &amp; Money Transfer</span>
+          </div>
+        </article>
+
+        <!-- 2 Smiley Studio -->
+        <article class="glass-card service-card reveal" aria-label="Smiley Studio">
+          <span class="service-icon" role="img" aria-label="Camera">📸</span>
+          <h3 class="service-name">Smiley Studio</h3>
+          <p class="service-desc">Professional photography and custom gifting — turning your moments into timeless memories.</p>
+          <div class="service-tags">
+            <span class="service-tag">Photo &amp; Video</span>
+            <span class="service-tag">Album Books</span>
+            <span class="service-tag">Frames</span>
+            <span class="service-tag">Custom Gifts</span>
+          </div>
+        </article>
+
+        <!-- 3 Smiley PC Factory -->
+        <article class="glass-card service-card reveal" aria-label="Smiley PC Factory">
+          <span class="service-icon" role="img" aria-label="Computer">🖥️</span>
+          <h3 class="service-name">Smiley PC Factory</h3>
+          <p class="service-desc">Bespoke PC builds and expert laptop servicing — optimised for work, creativity, and gaming.</p>
+          <div class="service-tags">
+            <span class="service-tag">Custom PC Build</span>
+            <span class="service-tag">Laptop Service</span>
+            <span class="service-tag">Desktop Service</span>
+            <span class="service-tag">Gaming PC Setup</span>
+          </div>
+        </article>
+
+        <!-- 4 CCTV & Security -->
+        <article class="glass-card service-card reveal" aria-label="CCTV and Security">
+          <span class="service-icon" role="img" aria-label="Camera">📷</span>
+          <h3 class="service-name">CCTV &amp; Security</h3>
+          <p class="service-desc">End-to-end security installations that protect your home, shop, and business 24/7.</p>
+          <div class="service-tags">
+            <span class="service-tag">CCTV Installation</span>
+            <span class="service-tag">Camera Setup</span>
+            <span class="service-tag">Security Solutions</span>
+          </div>
+        </article>
+
+        <!-- 5 LED Boards -->
+        <article class="glass-card service-card reveal" aria-label="LED Board Works">
+          <span class="service-icon" role="img" aria-label="Light bulb">💡</span>
+          <h3 class="service-name">Outdoor LED Board Works</h3>
+          <p class="service-desc">Bright, bold LED signage that makes your brand impossible to miss — day or night.</p>
+          <div class="service-tags">
+            <span class="service-tag">LED Sign Boards</span>
+            <span class="service-tag">Shop Boards</span>
+            <span class="service-tag">Branding Boards</span>
+          </div>
+        </article>
+
+        <!-- 6 Sound & DJ -->
+        <article class="glass-card service-card reveal" aria-label="Sound and DJ Works">
+          <span class="service-icon" role="img" aria-label="Headphones">🎵</span>
+          <h3 class="service-name">Sound &amp; DJ Works</h3>
+          <p class="service-desc">Professional audio solutions for every event — from intimate gatherings to large-scale celebrations.</p>
+          <div class="service-tags">
+            <span class="service-tag">DJ Setup</span>
+            <span class="service-tag">Sound System</span>
+            <span class="service-tag">Event Audio Support</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BRANCHES SECTION
+  ============================================================ -->
+  <section id="branches" class="section" aria-labelledby="branches-heading">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">Our Locations</span>
+        <h2 class="section-title" id="branches-heading">
+          Find Us <span class="grad-text">Near You</span>
+        </h2>
+        <p class="section-desc">Five branches across Tamil Nadu, bringing tech solutions closer to you.</p>
+      </div>
+
+      <div class="branches-grid">
+        <div class="glass-card branch-card reveal">
+          <span class="branch-icon" role="img" aria-label="Pin">📍</span>
+          <div class="branch-name">Thekkalur</div>
+          <div class="branch-tag">Main Branch</div>
+        </div>
+        <div class="glass-card branch-card reveal">
+          <span class="branch-icon" role="img" aria-label="Pin">📍</span>
+          <div class="branch-name">SCM</div>
+          <div class="branch-tag">Branch</div>
+        </div>
+        <div class="glass-card branch-card reveal">
+          <span class="branch-icon" role="img" aria-label="Pin">📍</span>
+          <div class="branch-name">Vanjipalayam</div>
+          <div class="branch-tag">Branch</div>
+        </div>
+        <div class="glass-card branch-card reveal">
+          <span class="branch-icon" role="img" aria-label="Pin">📍</span>
+          <div class="branch-name">Avinashi</div>
+          <div class="branch-tag">Branch</div>
+        </div>
+        <div class="glass-card branch-card reveal">
+          <span class="branch-icon" role="img" aria-label="Pin">📍</span>
+          <div class="branch-name">Kaniyampoondi</div>
+          <div class="branch-tag">Branch</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY CHOOSE US
+  ============================================================ -->
+  <section id="why" class="section" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">Why Smiley</span>
+        <h2 class="section-title" id="why-heading">
+          The <span class="grad-text">Smiley Difference</span>
+        </h2>
+        <p class="section-desc">We're not just a service centre — we're your long-term tech partner.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="glass-card why-card reveal">
+          <div class="why-icon" aria-hidden="true">⚡</div>
+          <h3 class="why-title">Fast Turnaround</h3>
+          <p class="why-desc">Most repairs and installations completed same-day. We value your time as much as you do.</p>
+        </div>
+        <div class="glass-card why-card reveal">
+          <div class="why-icon" aria-hidden="true">🛡️</div>
+          <h3 class="why-title">Genuine Parts Only</h3>
+          <p class="why-desc">We use only certified, genuine components — no shortcuts, no surprises on your bill.</p>
+        </div>
+        <div class="glass-card why-card reveal">
+          <div class="why-icon" aria-hidden="true">🤝</div>
+          <h3 class="why-title">Transparent Pricing</h3>
+          <p class="why-desc">Upfront quotes before we start. What we quote is exactly what you pay — always.</p>
+        </div>
+        <div class="glass-card why-card reveal">
+          <div class="why-icon" aria-hidden="true">🔧</div>
+          <h3 class="why-title">Expert Technicians</h3>
+          <p class="why-desc">Certified professionals across all our service verticals with years of hands-on experience.</p>
+        </div>
+        <div class="glass-card why-card reveal">
+          <div class="why-icon" aria-hidden="true">📍</div>
+          <h3 class="why-title">5 Convenient Locations</h3>
+          <p class="why-desc">Always a Smiley branch nearby — Thekkalur, SCM, Vanjipalayam, Avinashi, and Kaniyampoondi.</p>
+        </div>
+        <div class="glass-card why-card reveal">
+          <div class="why-icon" aria-hidden="true">😊</div>
+          <h3 class="why-title">Customer-First Culture</h3>
+          <p class="why-desc">Our team treats every customer like family. Friendly service with a genuine smile — every visit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALLERY / PORTFOLIO
+  ============================================================ -->
+  <section id="gallery" class="section" aria-labelledby="gallery-heading">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">Our Work</span>
+        <h2 class="section-title" id="gallery-heading">
+          Portfolio <span class="grad-text">&amp; Projects</span>
+        </h2>
+        <p class="section-desc">A glimpse of the work we do every day across Tamil Nadu.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-item--large reveal" role="img" aria-label="PC builds portfolio">
+          🖥️ <span>Custom PC Builds</span>
+        </div>
+        <div class="gallery-item reveal" role="img" aria-label="CCTV installations">
+          📷 <span>CCTV Projects</span>
+        </div>
+        <div class="gallery-item reveal" role="img" aria-label="LED signboards">
+          💡 <span>LED Signboards</span>
+        </div>
+        <div class="gallery-item reveal" role="img" aria-label="DJ events">
+          🎵 <span>DJ Events</span>
+        </div>
+        <div class="gallery-item reveal" role="img" aria-label="Studio photography">
+          📸 <span>Studio Shoots</span>
+        </div>
+        <div class="gallery-item reveal" role="img" aria-label="Mobile service">
+          📱 <span>Mobile Service</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section id="contact" class="section" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Info -->
+        <div class="reveal">
+          <span class="section-eyebrow">Get In Touch</span>
+          <h2 class="contact-info-title" id="contact-heading">
+            Let's Solve Your<br /><span class="grad-text">Tech Problem</span>
+          </h2>
+          <p class="contact-info-desc">
+            Walk into any of our branches or reach out below — our team responds fast.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon" aria-hidden="true">📞</div>
+              <div>
+                <div class="contact-detail-label">Phone / WhatsApp</div>
+                <a href="tel:+919876543210" class="contact-detail-val">+91 98765 43210</a>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon" aria-hidden="true">✉️</div>
+              <div>
+                <div class="contact-detail-label">Email</div>
+                <a href="mailto:smileygroups@example.com" class="contact-detail-val">smileygroups@example.com</a>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon" aria-hidden="true">📍</div>
+              <div>
+                <div class="contact-detail-label">Locations</div>
+                <div class="contact-detail-val">Thekkalur · SCM · Vanjipalayam · Avinashi · Kaniyampoondi</div>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon" aria-hidden="true">🕐</div>
+              <div>
+                <div class="contact-detail-label">Working Hours</div>
+                <div class="contact-detail-val">Mon – Sat: 9 AM – 8 PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form reveal" role="form" aria-label="Contact form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fname">First Name</label>
+              <input class="form-control" type="text" id="fname" name="fname" placeholder="Arjun" autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lname">Last Name</label>
+              <input class="form-control" type="text" id="lname" name="lname" placeholder="Kumar" autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input class="form-control" type="tel" id="phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-control" type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="service">Service Required</label>
+            <select class="form-control" id="service" name="service">
+              <option value="">Select a service…</option>
+              <option value="mobiles">Smiley Mobiles</option>
+              <option value="studio">Smiley Studio</option>
+              <option value="pc">Smiley PC Factory</option>
+              <option value="cctv">CCTV &amp; Security</option>
+              <option value="led">Outdoor LED Board Works</option>
+              <option value="sound">Sound &amp; DJ Works</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="branch">Nearest Branch</label>
+            <select class="form-control" id="branch" name="branch">
+              <option value="">Select a branch…</option>
+              <option value="thekkalur">Thekkalur</option>
+              <option value="scm">SCM</option>
+              <option value="vanjipalayam">Vanjipalayam</option>
+              <option value="avinashi">Avinashi</option>
+              <option value="kaniyampoondi">Kaniyampoondi</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-control" id="message" name="message" placeholder="Describe your requirement…"></textarea>
+          </div>
+
+          <div class="form-group">
+            <button type="button" class="btn-primary form-submit" id="submitBtn" onclick="handleFormSubmit()">
+              ⚡ Send Message
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo" aria-label="Smiley Groups Home">
+            <span class="logo-icon">😊</span>
+            <div class="logo-name">
+              <span class="grad-text">Smiley Groups</span>
+              <span>One Step Tech Solution</span>
+            </div>
+          </a>
+          <p>Tamil Nadu's most trusted multi-service technology company. Mobile, studio, PC, security, LED, and sound — all under one smile.</p>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="footer-col-title">Services</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="#services">📱 Smiley Mobiles</a></li>
+            <li><a href="#services">📸 Smiley Studio</a></li>
+            <li><a href="#services">🖥️ PC Factory</a></li>
+            <li><a href="#services">📷 CCTV Security</a></li>
+            <li><a href="#services">💡 LED Boards</a></li>
+            <li><a href="#services">🎵 Sound &amp; DJ</a></li>
+          </ul>
+        </div>
+
+        <!-- Branches -->
+        <div>
+          <h3 class="footer-col-title">Branches</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="#branches">📍 Thekkalur</a></li>
+            <li><a href="#branches">📍 SCM</a></li>
+            <li><a href="#branches">📍 Vanjipalayam</a></li>
+            <li><a href="#branches">📍 Avinashi</a></li>
+            <li><a href="#branches">📍 Kaniyampoondi</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="tel:+919876543210">📞 +91 9840894796</a></li>
+            <li><a href="mailto:smileygroups@example.com">✉️ smileygroups@example.com</a></li>
+            <li><a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copy">© <span id="year"></span> Smiley Groups of Companies. All rights reserved.</p>
+        <nav class="footer-bottom-links" aria-label="Footer legal links">
+          <a href="#hero">Privacy Policy</a>
+          <a href="#hero">Terms of Service</a>
+          <a href="#contact">Support</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       FLOATING ACTION BUTTONS
+  ============================================================ -->
+  <div class="fab-group" aria-label="Quick contact buttons">
+
+    <!-- Call Button -->
+    <a href="tel:+919840894796" class="fab fab-call" aria-label="Call Smiley Groups">
+      📞
+      <span class="fab-tip">Call Us</span>
+    </a>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919840894796?text=Hi%20Smiley%20Groups!%20I%20need%20a%20service." class="fab fab-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      💬
+      <span class="fab-tip">WhatsApp</span>
+    </a>
+
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    /* -------------------------------------------------------
+       Navbar: add "scrolled" class after scroll
+    ------------------------------------------------------- */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* -------------------------------------------------------
+       Hamburger Menu Toggle
+    ------------------------------------------------------- */
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close menu when any mobile link is clicked
+    document.querySelectorAll('.mobile-link, .mobile-menu .btn-primary').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+
+    /* -------------------------------------------------------
+       Scroll-Reveal Animation (IntersectionObserver)
+    ------------------------------------------------------- */
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          // Stagger siblings in the same grid
+          const siblings = Array.from(entry.target.closest('.services-grid, .branches-grid, .why-grid, .gallery-grid, .counters-grid, .about-grid, .contact-grid') ? entry.target.parentElement.querySelectorAll('.reveal') : []);
+          const idx = siblings.indexOf(entry.target);
+          const delay = Math.min(idx * 80, 400);
+          setTimeout(() => entry.target.classList.add('visible'), delay);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    /* -------------------------------------------------------
+       Counter Animation
+    ------------------------------------------------------- */
+    function animateCounter(el) {
+      const target  = parseInt(el.dataset.target, 10);
+      const suffix  = el.dataset.suffix || '';
+      const duration = 1600;
+      const step     = 16;
+      const increment = target / (duration / step);
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          el.textContent = target + suffix;
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.floor(current) + suffix;
+        }
+      }, step);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.counter-val').forEach(animateCounter);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    const counterSection = document.getElementById('counters');
+    if (counterSection) counterObserver.observe(counterSection);
+
+    /* -------------------------------------------------------
+       Contact Form Submit
+    ------------------------------------------------------- */
+    function handleFormSubmit() {
+      const fname   = document.getElementById('fname').value.trim();
+      const phone   = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
+
+      if (!fname) {
+        alert('Please enter your name.');
+        document.getElementById('fname').focus();
+        return;
+      }
+      if (!phone) {
+        alert('Please enter your phone number.');
+        document.getElementById('phone').focus();
+        return;
+      }
+
+      // Show thank you alert
+      alert('✅ Thank you! Smiley Groups will contact you soon. 😊');
+
+      // Reset form fields
+      ['fname','lname','phone','email','service','branch','message'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+    }
+
+    /* -------------------------------------------------------
+       Footer Year
+    ------------------------------------------------------- */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* -------------------------------------------------------
+       Smooth scroll polyfill for older browsers
+    ------------------------------------------------------- */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
